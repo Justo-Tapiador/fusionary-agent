@@ -7,6 +7,10 @@ package-lock.json
 .env.local
 .env.*.local
 
+# npm
+.npmrc
+*.tgz
+
 # Build artifacts
 *.log
 *.pdf
@@ -19,7 +23,7 @@ package-lock.json
 
 # Runtime data (local — research archive is committed as a baseline)
 data/
-  !data/.gitkeep
+!data/.gitkeep
 
 # IDE
 .vscode/
@@ -37,14 +41,15 @@ coverage/
 
 # Allow research seed documents but not runtime-generated ones
 research/*/
-  !research/topics/
-  !research/hypotheses/
-  !research/designs/
-  !research/simulations/
-  !research/patents/
-  !research/cross_refs/
-  !research/indices/
+!research/topics/
+!research/hypotheses/
+!research/designs/
+!research/simulations/
+!research/patents/
+!research/cross_refs/
+!research/indices/
+
 research/topics/*/
-  !research/topics/concept_lawson/
-  !research/topics/concept_mif/
-  !research/topics/concept_pb11/
+!research/topics/concept_lawson/
+!research/topics/concept_mif/
+!research/topics/concept_pb11/
