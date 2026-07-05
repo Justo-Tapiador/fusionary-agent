@@ -7,6 +7,14 @@
   "bin": {
     "fusionary": "./scripts/cli.js"
   },
+   "repository": {                         
+    "type": "git",
+    "url": "https://github.com/Justo-Tapiador/fusionary-agent.git"
+  },
+  "homepage": "https://github.com/Justo-Tapiador/fusionary-agent#readme",
+  "bugs": {
+    "url": "https://github.com/Justo-Tapiador/fusionary-agent/issues"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
