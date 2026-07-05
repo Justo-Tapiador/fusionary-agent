@@ -1,13 +1,13 @@
 {
   "name": "fusionary-agent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "FUSIONARY v1.0 — Autonomous Scientific Research Agent for Practical, Safe, Short-to-Mid-Term Nuclear Fusion Energy. Built on the Artificial Junky Neuron (AJN) framework, extended from predator-jungle-agent v2.0 by Justo Tapiador Garcia (UA). Generates LaTeX/PDF scientific documents, organizes them hierarchically, and prepares patentable solution clusters.",
   "main": "src/index.js",
   "type": "module",
   "bin": {
     "fusionary": "./scripts/cli.js"
   },
-   "repository": {                         
+  "repository": {
     "type": "git",
     "url": "https://github.com/Justo-Tapiador/fusionary-agent.git"
   },
