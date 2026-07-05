@@ -1,0 +1,48 @@
+# FUSIONARY v1.0 — docker-compose
+# Includes an optional Ollama sidecar for local LLM inference.
+
+version: "3.9"
+
+services:
+  fusionary:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: fusionary-agent:1.0.0
+    container_name: fusionary
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../research:/app/research
+      - ../data:/app/data
+    env_file:
+      - ../.env
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/status').then(r=>r.ok?process.exit(0):process.exit(1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: fusionary-ollama
+    profiles: ["llm"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  ollama_data:

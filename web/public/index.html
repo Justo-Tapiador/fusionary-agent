@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FUSIONARY v1.0 — Autonomous Fusion Research Agent</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='52' font-size='52'>⚛</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚛</span>
+      <div>
+        <h1>FUSIONARY <span class="version">v1.0</span></h1>
+        <p>Autonomous Scientific Research Agent for Practical, Safe, Short-to-Mid-Term Nuclear Fusion Energy</p>
+      </div>
+    </div>
+    <div class="status-chips">
+      <span class="chip" id="chip-cycle">Cycle: —</span>
+      <span class="chip" id="chip-mode">Mode: —</span>
+      <span class="chip" id="chip-llm">LLM: —</span>
+      <span class="chip" id="chip-docs">Docs: 0</span>
+      <span class="chip chip-ok" id="chip-ws">WS: connecting…</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="feed">Research Feed</button>
+    <button class="tab" data-tab="archive">Archive</button>
+    <button class="tab" data-tab="patents">Patent Queue</button>
+    <button class="tab" data-tab="kg">Knowledge Graph</button>
+    <button class="tab" data-tab="metrics">Metrics</button>
+    <button class="tab" data-tab="guide">Owner Guidance</button>
+  </nav>
+
+  <main class="layout">
+
+    <!-- Research Feed -->
+    <section class="panel active" id="panel-feed">
+      <div class="panel-header">
+        <h2>Real-time Research Feed</h2>
+        <button id="btn-clear-feed" class="btn-mini">Clear</button>
+      </div>
+      <div id="feed" class="feed"></div>
+    </section>
+
+    <!-- Archive -->
+    <section class="panel" id="panel-archive">
+      <div class="panel-header">
+        <h2>Document Archive</h2>
+        <input type="search" id="archive-search" placeholder="Search documents…" />
+      </div>
+      <div id="archive-list" class="archive-list"></div>
+    </section>
+
+    <!-- Patents -->
+    <section class="panel" id="panel-patents">
+      <div class="panel-header">
+        <h2>Patent Queue</h2>
+        <button id="btn-refresh-patents" class="btn-mini">Refresh</button>
+      </div>
+      <div id="patents-list" class="patents-list"></div>
+    </section>
+
+    <!-- Knowledge Graph -->
+    <section class="panel" id="panel-kg">
+      <div class="panel-header">
+        <h2>Fusion Knowledge Graph</h2>
+        <span id="kg-stats" class="muted"></span>
+      </div>
+      <pre id="kg-mermaid" class="kg-source"></pre>
+      <p class="muted small">Tip: paste the above into <a href="https://mermaid.live" target="_blank" rel="noopener">mermaid.live</a> for an interactive view.</p>
+    </section>
+
+    <!-- Metrics -->
+    <section class="panel" id="panel-metrics">
+      <div class="panel-header"><h2>Live Metrics</h2></div>
+      <div id="metrics-grid" class="metrics-grid"></div>
+    </section>
+
+    <!-- Owner Guidance -->
+    <section class="panel" id="panel-guide">
+      <div class="panel-header"><h2>Owner Guidance</h2></div>
+      <p class="muted">
+        FUSIONARY runs autonomously by default. Use this panel to steer it
+        toward a specific research target. The directive is parsed by the
+        Hierarchical Command Interpreter and injected as a new addiction target
+        into the AJN backbone.
+      </p>
+      <form id="guide-form" class="guide-form">
+        <textarea id="guide-input" rows="4"
+          placeholder="Example: Focus on tritium breeding TBR > 1.2 with HCPB blanket and REBCO magnets at 12 T"></textarea>
+        <div class="guide-actions">
+          <select id="safety-select">
+            <option value="standard">Safety: standard</option>
+            <option value="strict">Safety: strict</option>
+            <option value="permissive">Safety: permissive</option>
+          </select>
+          <button type="submit" class="btn-primary">Send Directive</button>
+        </div>
+      </form>
+
+      <h3>Quick Directives</h3>
+      <div class="quick-directives">
+        <button class="btn-quick" data-directive="Investigate REBCO high-field tokamak at 20 T with Q > 10">REBCO 20 T tokamak</button>
+        <button class="btn-quick" data-directive="Compare DCLL vs HCPB blankets for TBR > 1.15">DCLL vs HCPB</button>
+        <button class="btn-quick" data-directive="Evaluate MagLIF with 27 MA peak current at 0.1 Hz repetition">MagLIF rep-rate</button>
+        <button class="btn-quick" data-directive="Liquid lithium first wall with tungsten backing, 2 MW/m² heat flux">Liquid Li PFC</button>
+        <button class="btn-quick" data-directive="p-B11 aneutronic with direct conversion, 300 keV ion temperature">p-B11 aneutronic</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>FUSIONARY v1.0 — based on AJN theory by Justo Tapiador Garcia (UA). MIT License.</span>
+    <span id="footer-uptime">Uptime: 0s</span>
+  </footer>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

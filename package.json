@@ -1,0 +1,100 @@
+{
+  "name": "fusionary-agent",
+  "version": "1.0.0",
+  "description": "FUSIONARY v1.0 — Autonomous Scientific Research Agent for Practical, Safe, Short-to-Mid-Term Nuclear Fusion Energy. Built on the Artificial Junky Neuron (AJN) framework, extended from predator-jungle-agent v2.0 by Justo Tapiador Garcia (UA). Generates LaTeX/PDF scientific documents, organizes them hierarchically, and prepares patentable solution clusters.",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "fusionary": "./scripts/cli.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "cli": "node scripts/cli.js",
+    "web": "node web/server.js",
+    "research": "node scripts/cli.js research",
+    "guide": "node scripts/cli.js guide",
+    "test": "node --experimental-vm-modules tests/run.js",
+    "lint": "eslint src/ --ext .js",
+    "demo": "node scripts/cli.js demo",
+    "train": "node scripts/cli.js train",
+    "benchmark": "node scripts/benchmark.js",
+    "checkpoint": "node scripts/cli.js checkpoint",
+    "patents": "node scripts/cli.js patents",
+    "archive": "node scripts/cli.js archive",
+    "docker:build": "docker build -t fusionary-agent -f docker/Dockerfile .",
+    "docker:run": "docker run -p 3000:3000 -v $(pwd)/research:/app/research -v $(pwd)/data:/app/data fusionary-agent"
+  },
+  "keywords": [
+    "nuclear-fusion",
+    "fusion-energy",
+    "scientific-research",
+    "autonomous-agent",
+    "agentic-ai",
+    "junky-neuron",
+    "AJN",
+    "deep-agentic-flow",
+    "tokamak",
+    "stellarator",
+    "inertial-confinement",
+    "magneto-inertial-fusion",
+    "aneutronic-fusion",
+    "tritium-breeding",
+    "patent-drafting",
+    "latex",
+    "scientific-publishing",
+    "LLM-integration",
+    "GLM",
+    "transformer",
+    "self-attention",
+    "persistent-memory",
+    "safety-guardrails",
+    "plugin-architecture"
+  ],
+  "author": {
+    "name": "Fusionary Project — based on Agentic Theory by Justo Tapiador Garcia",
+    "affiliation": "Universidad de Alicante (UA) — extended for fusion energy research",
+    "url": "https://github.com/Justo-Tapiador/predator-jungle-agent",
+    "email": "justo.tapiador@gmail.com"
+  },
+  "license": "MIT",
+  "files": [
+    "src/",
+    "config/",
+    "web/",
+    "scripts/",
+    "research/",
+    "plugins/",
+    "docker/",
+    "tests/",
+    "README.md",
+    "LICENSE",
+    ".env.example",
+    "docs/fusionary-logo.png"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.5",
+    "eventemitter3": "^5.0.1",
+    "express": "^4.18.3",
+    "inquirer": "^9.2.15",
+    "mathjs": "^13.0.0",
+    "ora": "^8.0.1",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "uuid": "^9.0.0",
+    "ws": "^8.16.0",
+    "z-ai-web-dev-sdk": "latest",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

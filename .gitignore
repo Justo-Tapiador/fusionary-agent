@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+*.log
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Runtime data (local — research archive is committed as a baseline)
+data/
+  !data/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Test artifacts
+coverage/
+.nyc_output/
+
+# Allow research seed documents but not runtime-generated ones
+research/*/
+  !research/topics/
+  !research/hypotheses/
+  !research/designs/
+  !research/simulations/
+  !research/patents/
+  !research/cross_refs/
+  !research/indices/
+research/topics/*/
+  !research/topics/concept_lawson/
+  !research/topics/concept_mif/
+  !research/topics/concept_pb11/

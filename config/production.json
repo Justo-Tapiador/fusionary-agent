@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "agent": {
+    "maxCycles": 500,
+    "cycleIntervalMs": 10000,
+    "safetyLevel": "strict"
+  },
+  "llm": {
+    "temperature": 0.5,
+    "maxTokens": 8192
+  },
+  "metrics": {
+    "enableConsole": true
+  },
+  "web": {
+    "port": 3000
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "agent": {
+    "maxCycles": 50,
+    "cycleIntervalMs": 5000,
+    "autonomousMode": true,
+    "safetyLevel": "standard",
+    "dModel": 256,
+    "nHeads": 8,
+    "dFF": 1024,
+    "maxSteps": 200
+  },
+  "llm": {
+    "defaultAdapter": "zai",
+    "defaultModel": "glm-4.6",
+    "temperature": 0.7,
+    "maxTokens": 4096,
+    "timeoutMs": 60000,
+    "failoverOrder": ["zai", "anthropic", "openai", "local"]
+  },
+  "research": {
+    "rootDir": "./research",
+    "categories": ["topics", "hypotheses", "designs", "simulations", "patents", "cross_refs", "indices"],
+    "patentEligibleThreshold": "mid_term"
+  },
+  "memory": {
+    "storageDir": "./data/memory",
+    "maxWorking": 50,
+    "ttlMs": 1800000
+  },
+  "knowledge_graph": {
+    "storagePath": "./data/knowledge_graph.json"
+  },
+  "citation_graph": {
+    "storagePath": "./data/citation_graph.json"
+  },
+  "safety": {
+    "protectedPaths": ["/etc", "/root", "/var", "/usr", "/boot", "/sys", "/proc", "/dev"],
+    "rateLimits": {
+      "perMinute": 60,
+      "perHour": 600
+    },
+    "forbiddenPatterns": [
+      "cold_fusion",
+      "LENR",
+      "palladium_electrolysis",
+      "free_energy",
+      "perpetual_motion"
+    ]
+  },
+  "metrics": {
+    "enableConsole": false,
+    "consoleIntervalMs": 30000
+  },
+  "web": {
+    "port": 3000,
+    "host": "0.0.0.0",
+    "wsPath": "/ws"
+  },
+  "training": {
+    "epochsI": 10,
+    "epochsII_T1": 5,
+    "epochsII_T2": 5,
+    "epochsII_T3": 5,
+    "epochsIII": 8,
+    "epochsIV": 6,
+    "earlyStoppingPatience": 5
+  }
+}
