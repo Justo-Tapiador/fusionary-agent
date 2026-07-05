@@ -201,7 +201,7 @@ fusionary web                 # dashboard at http://localhost:3000
 ### From source
 
 ```bash
-git clone <your-fork-or-mirror>/fusionary-agent.git
+git clone https://github.com/Justo-Tapiador/fusionary-agent.git
 cd fusionary-agent
 npm install
 cp .env.example .env       # then edit .env with your API keys
