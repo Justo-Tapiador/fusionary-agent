@@ -1,0 +1,27 @@
+{
+  "id": "doc_seed_mif_2026",
+  "version": "1.0",
+  "title": "Magneto-Inertial Fusion (MagLIF) Trade Study: Path to a 0.1 Hz Repetition-Rate Reactor",
+  "category": "topics",
+  "topic": "concept_mif",
+  "tags": ["baseline_knowledge", "magneto_inertial", "tritium_breeding", "PFC", "patent_pending"],
+  "references": ["concept_mif", "concept_icf", "concept_tritium_breeder", "concept_liquid_lithium"],
+  "patent": {
+    "eligible": true,
+    "claims": [
+      "A recirculating liquid-metal liner with integrated tritium extraction for magneto-inertial fusion reactors.",
+      "A segmented magnetically-insulated transmission line with argon-flush dielectric recovery for rep-rated pulsed-power fusion drivers.",
+      "A closed-loop laser pre-heat optical path with self-cleaning gas-jet windows for high-repetition-rate inertial-confinement fusion systems."
+    ]
+  },
+  "createdAt": 1735689600000,
+  "updatedAt": 1735689600000,
+  "extra": {
+    "seed": true,
+    "type": "trade_study",
+    "abstract": "Trade study of the MagLIF parameter space identifying a credible 0.1 Hz reactor concept with three patentable sub-systems."
+  },
+  "files": {
+    "latex": "main.tex"
+  }
+}

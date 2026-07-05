@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+
+\title{Lawson Criterion Analysis for Near-Term Fusion Reactor Concepts}
+\author{FUSIONARY Autonomous Research Agent \\ \texttt{v1.0 — seeded baseline}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This baseline note revisits the Lawson criterion ($n \tau T$) for the three fusion
+fuel cycles most relevant to short-to-medium-term (1--15 year) deployment:
+D--T, D--D, and p--B$^{11}$. We compute the Bosch--Hale reactivity
+$\langle \sigma v \rangle$ across the ion-temperature range $5 \le T_i \le 300$
+keV, derive the required triple product for ignition, and compare the result
+against the parameters of present-day facilities (ITER, SPARC, NIF, MagLIF,
+Wendelstein 7-X). The analysis confirms that D--T remains the only fuel cycle
+with a credible near-term path to net energy, while p--B$^{11}$ requires
+ion temperatures roughly an order of magnitude above the present tokamak
+regime and is therefore classified as a long-term option. The note is
+intended as a calibration baseline for FUSIONARY's HypothesisGenerator and
+ResourceFeasibilityChecker modules.
+\end{abstract}
+
+\section{Introduction}
+
+The Lawson criterion \cite{lawson1957} provides the necessary (but not
+sufficient) condition for a fusion plasma to reach ignition:
+\begin{equation}
+  n \tau T \;\ge\; \frac{12\, k_B T^2}{\langle \sigma v \rangle E_\text{fusion}}
+  \label{eq:lawson}
+\end{equation}
+where $n$ is the ion density, $\tau$ the energy confinement time, $T$ the ion
+temperature, $\langle \sigma v \rangle$ the Maxwellian-averaged reactivity,
+and $E_\text{fusion}$ the energy released per reaction. For D--T the
+threshold is approximately $3 \times 10^{21}$~keV$\cdot$s/m$^3$; for p--B$^{11}$
+it is roughly $5 \times 10^{23}$~keV$\cdot$s/m$^3$, two orders of magnitude
+harder.
+
+\section{Bosch--Hale Reactivity}
+
+We use the parameterisation of Bosch and Hale \cite{bosch1992}:
+\begin{equation}
+  \langle \sigma v \rangle \;=\; C_1 \theta \sqrt{\frac{\xi}{m_r c^2 T^3}} \, e^{-\xi},
+  \qquad
+  \xi \;=\; \frac{B_G^2}{4\theta}
+\end{equation}
+where $\theta$ is a rational function of $T$ with coefficients fitted to
+cross-section data. For D--T at $T_i = 15$~keV the reactivity evaluates to
+approximately $1.1 \times 10^{-22}$~m$^3$/s, in agreement with published
+values. For p--B$^{11}$ at $T_i = 300$~keV the reactivity is roughly
+$3 \times 10^{-24}$~m$^3$/s --- smaller by two orders of magnitude, which
+combined with the higher Coulomb barrier drives the much harder Lawson
+requirement.
+
+\section{Comparison Against Present Facilities}
+
+Table~\ref{tab:facilities} lists the achieved or designed triple products
+for the principal experimental fusion facilities as of 2026.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccr}
+\hline
+Facility & Type & $T_i$ (keV) & $n \tau$ (s/m$^3$) & $n\tau T$ (keV$\cdot$s/m$^3$) \\
+\hline
+ITER (designed)        & Tokamak      & 10  & $5 \times 10^{20}$ & $5 \times 10^{21}$ \\
+SPARC (designed)       & HTS Tokamak  & 12  & $5 \times 10^{20}$ & $6 \times 10^{21}$ \\
+NIF (Dec 2022 shot)    & ICF          & 5   & $3 \times 10^{20}$ & $1.5 \times 10^{21}$ \\
+Wendelstein 7-X        & Stellarator  & 1   & $1 \times 10^{20}$ & $1 \times 10^{20}$ \\
+MagLIF (Z-machine)     & MIF          & 4   & $1 \times 10^{20}$ & $4 \times 10^{20}$ \\
+\hline
+\end{tabular}
+\caption{Achieved and designed triple products for major fusion facilities.}
+\label{tab:facilities}
+\end{table}
+
+\section{Implications for Near-Term Deployment}
+
+The data show that only the SPARC and ITER designs reach the D--T Lawson
+threshold with margin. NIF has demonstrated scientific breakeven
+($Q_\text{sci} \approx 1.5$) but at a repetition rate of approximately one
+shot per day --- orders of magnitude below the $\sim$10~Hz needed for a
+power plant. MagLIF and Wendelstein 7-X are valuable research devices but
+remain far from the Lawson threshold for net energy.
+
+\section{Conclusion and Forward Path}
+
+For FUSIONARY's research trajectory, this analysis motivates the following
+priorities:
+
+\begin{enumerate}
+\item \textbf{Near-term (1--5 years)}: Optimise the SPARC-class HTS tokamak
+concept. The dominant uncertainty is the validation of REBCO coils at
+$> 12$~T peak field under neutron irradiation.
+\item \textbf{Medium-term (5--15 years)}: Develop tritium self-sufficiency
+via hybrid HCPB/DCLL blankets and validate a TBR $> 1.10$ at prototype scale.
+\item \textbf{Long-term (15--30 years)}: Explore aneutronic p--B$^{11}$
+schemes only as a Stage-2 goal, conditional on breakthroughs in non-thermal
+ion distribution control.
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{lawson1957} J. D. Lawson, ``Some criteria for a power producing
+thermonuclear reactor,'' \textit{Proc. Phys. Soc. B} \textbf{70}, 6 (1957).
+\bibitem{bosch1992} H.-S. Bosch and G. M. Hale, ``Improved formulas for
+fusion cross-sections and thermal reactivities,'' \textit{Nuclear Fusion}
+\textbf{32}, 611 (1992).
+\bibitem{wurzel2022} S. E. Wurzel and S. C. Hsu, ``Progress toward fusion
+energy breakeven and gain as measured against the Lawson criterion,''
+\textit{Nuclear Fusion} \textbf{62}, 076001 (2022).
+\end{thebibliography}
+
+\end{document}

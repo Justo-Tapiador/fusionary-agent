@@ -1,0 +1,23 @@
+{
+  "id": "doc_seed_lawson_2026",
+  "version": "1.0",
+  "title": "Lawson Criterion Analysis for Near-Term Fusion Reactor Concepts",
+  "category": "topics",
+  "topic": "concept_lawson",
+  "tags": ["baseline_knowledge", "magnetic_confinement", "inertial_confinement", "cross_cutting"],
+  "references": ["concept_lawson", "concept_tokamak", "concept_icf", "concept_mif", "concept_pb11"],
+  "patent": {
+    "eligible": false,
+    "claims": []
+  },
+  "createdAt": 1735689600000,
+  "updatedAt": 1735689600000,
+  "extra": {
+    "seed": true,
+    "type": "baseline_note",
+    "abstract": "Calibration baseline for FUSIONARY's HypothesisGenerator and ResourceFeasibilityChecker modules."
+  },
+  "files": {
+    "latex": "main.tex"
+  }
+}

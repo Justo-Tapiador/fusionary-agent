@@ -1,0 +1,27 @@
+{
+  "id": "doc_seed_pb11_2026",
+  "version": "1.0",
+  "title": "Aneutronic p-B11 Fusion: Long-Term Pathway Assessment and Direct-Conversion Architecture",
+  "category": "topics",
+  "topic": "concept_pb11",
+  "tags": ["baseline_knowledge", "aneutronic", "direct_conversion", "patent_pending"],
+  "references": ["concept_pb11", "concept_direct_conversion", "concept_lawson"],
+  "patent": {
+    "eligible": true,
+    "claims": [
+      "A staged laser-magnetic heating architecture for proton-boron-11 fusion comprising: (a) a picosecond laser pre-heat stage; (b) a pulsed magnetic compression stage; (c) a sustained alpha-burn stage.",
+      "An inverse-cyclotron direct converter with staged deceleration electrodes for converting charged fusion products to electricity.",
+      "A closed-loop boron-11 enrichment and recycling system for aneutronic fusion reactors."
+    ]
+  },
+  "createdAt": 1735689600000,
+  "updatedAt": 1735689600000,
+  "extra": {
+    "seed": true,
+    "type": "long_term_assessment",
+    "abstract": "Long-term feasibility assessment of p-B11 fusion with three patentable sub-systems identified."
+  },
+  "files": {
+    "latex": "main.tex"
+  }
+}
